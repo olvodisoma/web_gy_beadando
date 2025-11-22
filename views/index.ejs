@@ -28,29 +28,67 @@
     </div>
 </section>
 
-<!-- ALATTA JÖHET A RÉGI TARTALOM (tiles, bemutatkozás stb.) -->
-<section id="main" class="wrapper">
-    <div class="inner">
-        <section>
+<section id="about" class="wrapper about-wrapper">
+    <div class="inner about-grid">
+
+        <!-- Bal oldal: bemutatkozás -->
+        <div class="about-text">
             <h2>Kik vagyunk?</h2>
             <p>
                 A Hyperspace Cinema Network egy oktatási célú webalkalmazás,
                 amely Budapest mozihálózatát és filmkínálatát mutatja be.
-                A projekt része a Webprogramozás II beadandónak.
+                A projekt a Webprogramozás II. beadandó feladataként készült,
+                valós adatbázisra építve, modern NodeJS alapokon.
             </p>
-        </section>
+            <p>
+                Célunk, hogy egy letisztult, mégis látványos felületen keresztül
+                mutassuk be a filmeket, mozikat és a hozzájuk kapcsolódó adatokat.
+            </p>
+        </div>
 
-        <section>
-            <h2>Mit tud az alkalmazás?</h2>
-            <ul>
-                <li>Regisztráció, bejelentkezés, kijelentkezés</li>
-                <li>Adatbázis lekérdezések: filmek, mozik, vetítések</li>
-                <li>Kapcsolat űrlap → üzenetek mentése adatbázisba</li>
-                <li>Üzenetek megtekintése bejelentkezett felhasználóknak</li>
-                <li>CRUD műveletek (felhasználók tábla)</li>
-                <li>Admin jogosultság kezelés</li>
-            </ul>
-        </section>
+        <!-- Jobb oldal: funkciók kártyákban -->
+        <div class="about-features">
+            <h3>Mit tud az alkalmazás?</h3>
+            <div class="feature-list">
+
+                <div class="feature-card">
+                    <h4>🔐 Autentikáció</h4>
+                    <p>Regisztráció, bejelentkezés, szerepkörök: látogató, felhasználó, admin.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4🎬> Adatbázis nézet</h4>
+                    <p>Filmek, mozik és vetítések megjelenítése több összekapcsolt táblából.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>📩 Kapcsolat & Üzenetek</h4>
+                    <p>Kapcsolat űrlap, üzenetek mentése és megtekintése bejelentkezve.</p>
+                </div>
+
+                <div class="feature-card">
+                    <h4>⚙️ Admin CRUD</h4>
+                    <p>Felhasználók kezelése (Create, Read, Update, Delete) admin jogosultsággal.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Statisztika szekció -->
+    <div class="inner stats-row">
+        <div class="stat-card">
+            <span class="stat-number">150+</span>
+            <span class="stat-label">film rekord</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">40+</span>
+            <span class="stat-label">budapesti mozi</span>
+        </div>
+        <div class="stat-card">
+            <span class="stat-number">4+</span>
+            <span class="stat-label">fő funkció</span>
+        </div>
     </div>
 </section>
 
