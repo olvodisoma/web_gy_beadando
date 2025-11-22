@@ -1,0 +1,54 @@
+<%- include("partials/header") %>
+
+<section id="main" class="wrapper">
+    <div class="inner">
+        <header class="major">
+            <h2>Beérkezett üzenetek</h2>
+            <p>A kapcsolat űrlapon keresztül érkezett üzenetek listája.</p>
+        </header>
+
+        <% if (!messages || messages.length === 0) { %>
+            <p>Még nem érkezett egyetlen üzenet sem.</p>
+        <% } else { %>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Küldés ideje</th>
+                            <th>Név</th>
+                            <th>E-mail</th>
+                            <th>Tárgy</th>
+                            <th>Üzenet</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% messages.forEach(msg => { %>
+                            <tr>
+                                <td>
+                                    <% 
+                                        // created_at formázása: YYYY-MM-DD HH:MM
+                                        const d = new Date(msg.created_at);
+                                        const yyyy = d.getFullYear();
+                                        const mm = String(d.getMonth() + 1).padStart(2, '0');
+                                        const dd = String(d.getDate()).padStart(2, '0');
+                                        const hh = String(d.getHours()).padStart(2, '0');
+                                        const min = String(d.getMinutes()).padStart(2, '0');
+                                    %>
+                                    <%= `${yyyy}-${mm}-${dd} ${hh}:${min}` %>
+                                </td>
+                                <td><%= msg.name %></td>
+                                <td><%= msg.email %></td>
+                                <td><%= msg.subject || "-" %></td>
+                                <td><%= msg.message %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+
+        <% } %>
+    </div>
+</section>
+
+<%- include("partials/footer") %>

@@ -5,6 +5,7 @@ const session = require("express-session");
 const authRoutes = require("./routes/auth");
 const adatbazisRoutes = require("./routes/adatbazis");
 const kapcsolatRoutes = require("./routes/kapcsolat");
+const uzenetekRoutes = require("./routes/uzenetek");
 
 const app = express();
 
@@ -38,7 +39,7 @@ app.set("views", path.join(__dirname, "views"));
 app.use("/", authRoutes);
 app.use("/", adatbazisRoutes);
 app.use("/", kapcsolatRoutes);
-
+app.use("/", uzenetekRoutes);
 // Főoldal
 app.get("/", (req, res) => {
   res.render("index"); // user és currentPath már benne van a res.locals-ban
