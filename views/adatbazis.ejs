@@ -1,0 +1,92 @@
+<%- include("partials/header") %>
+
+<section id="main" class="wrapper">
+    <div class="inner">
+        <header class="major">
+            <h2>Adatbázis – Filmek, mozik, vetítések</h2>
+            <p>Az alábbiakban a moziműsor adatbázis három táblájának adatai láthatók.</p>
+        </header>
+
+        <!-- Filmek -->
+        <section>
+            <h3>Filmek (film tábla)</h3>
+            <p>Az adatbázisban szereplő filmek listája (max. 50 találat):</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>FKód</th>
+                            <th>Film címe</th>
+                            <th>Műfaj</th>
+                            <th>Hossz (perc)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% filmek.forEach(f => { %>
+                            <tr>
+                                <td><%= f.fkod %></td>
+                                <td><%= f.filmcim %></td>
+                                <td><%= f.mufaj || "-" %></td>
+                                <td><%= f.hossz %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Mozik -->
+        <section>
+            <h3>Mozik (mozi tábla)</h3>
+            <p>Az adatbázisban szereplő mozik listája:</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Azon.</th>
+                            <th>Mozi neve</th>
+                            <th>Ir.szám</th>
+                            <th>Cím</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% mozik.forEach(m => { %>
+                            <tr>
+                                <td><%= m.moziazon %></td>
+                                <td><%= m.mozinev %></td>
+                                <td><%= m.irszam %></td>
+                                <td><%= m.cim %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Vetítések (JOIN) -->
+        <section>
+            <h3>Vetítések (film + mozi + hely JOIN)</h3>
+            <p>Melyik filmet melyik moziban vetítik (max. 100 találat):</p>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Film címe</th>
+                            <th>Mozi neve</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% vetitesek.forEach(v => { %>
+                            <tr>
+                                <td><%= v.filmcim %></td>
+                                <td><%= v.mozinev %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</section>
+
+<%- include("partials/footer") %>

@@ -1,0 +1,19 @@
+<%- include("partials/header") %>
+
+<section id="main">
+    <div class="inner">
+        <h2>Bejelentkezés</h2>
+
+        <form method="POST" action="/login">
+            <label>Email:</label>
+            <input type="email" name="email" required>
+
+            <label>Jelszó:</label>
+            <input type="password" name="password" required>
+
+            <button type="submit">Bejelentkezés</button>
+        </form>
+    </div>
+</section>
+
+<%- include("partials/footer") %>

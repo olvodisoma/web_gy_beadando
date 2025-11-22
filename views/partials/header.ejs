@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Hyperspace – Moziműsor</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Hyperspace CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+    <!-- Oldalsáv / fejléc -->
+    <section id="header">
+        <header>
+            <span class="image avatar">
+                <img src="/images/avatar_resized.png" alt="Profilkép" />
+            </span>
+            <h1 id="logo"><a href="/">Hyperspace Cinema Network</a></h1>
+            <p>Budapesti mozik és filmek NodeJS alapú portálja</p>
+        </header>
+
+        <nav id="nav">
+            <ul>
+                <li>
+                    <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">
+                        Főoldal
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/adatbazis" class="<%= currentPath === '/adatbazis' ? 'active' : '' %>">
+                        Adatbázis
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/crud/film" class="<%= currentPath.startsWith('/crud') ? 'active' : '' %>">
+                        CRUD
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/kapcsolat" class="<%= currentPath === '/kapcsolat' ? 'active' : '' %>">
+                        Kapcsolat
+                    </a>
+                </li>
+
+                <li>
+                    <a href="/uzenetek" class="<%= currentPath === '/uzenetek' ? 'active' : '' %>">
+                        Üzenetek
+                    </a>
+                </li>
+
+                <% if (!user) { %>
+                    <li>
+                        <a href="/login" class="<%= currentPath === '/login' ? 'active' : '' %>">
+                            Bejelentkezés
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/register" class="<%= currentPath === '/register' ? 'active' : '' %>">
+                            Regisztráció
+                        </a>
+                    </li>
+                <% } else { %>
+                    <% if (user.role === "admin") { %>
+                        <li>
+                            <a href="/admin" class="<%= currentPath.startsWith('/admin') ? 'active' : '' %>">
+                                Admin
+                            </a>
+                        </li>
+                    <% } %>
+                    <li>
+                        <a href="/logout">
+                            Kijelentkezés
+                        </a>
+                    </li>
+                <% } %>
+            </ul>
+        </nav>
+
+        <footer>
+            <ul class="icons">
+                <li>
+                    <a href="#" class="icon brands fa-github">
+                        <span class="label">GitHub</span>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">

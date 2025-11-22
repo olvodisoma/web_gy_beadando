@@ -1,0 +1,104 @@
+<%- include("partials/header") %>
+
+<section id="main" class="wrapper">
+    <div class="inner">
+        <!-- HERO / INTRO -->
+        <header class="major">
+            <h1>Hyperspace Cinema Network</h1>
+            <p>Budapest mozijainak közös online felülete – NodeJS + MySQL alapokon.</p>
+        </header>
+
+        <!-- RÖVID BEMUTATKOZÁS -->
+        <section>
+            <h2>Kik vagyunk?</h2>
+            <p>
+                A <strong>Hyperspace Cinema Network</strong> egy fiktív szervezet, amely
+                a budapesti művész- és multiplexmozik műsorát gyűjti össze egy közös,
+                modern, reszponzív felületen. Az oldalon könnyedén böngészhetők a
+                filmek, vetítési helyek és a moziműsorok.
+            </p>
+            <p>
+                A webalkalmazás a <strong>Web-Programozás II</strong> tantárgy
+                beadandó feladataként készült. A háttérben MySQL adatbázis, a
+                szerveroldalon pedig NodeJS + Express + EJS sablonmotor működik.
+            </p>
+        </section>
+
+        <!-- SZOLGÁLTATÁSOK / FUNKCIÓK -->
+        <section>
+            <h2>Mit tud az alkalmazás?</h2>
+            <div class="features">
+                <article>
+                    <h3>Filmadatbázis</h3>
+                    <p>
+                        A <strong>film</strong>, <strong>mozi</strong> és
+                        <strong>hely</strong> táblák adatait jelenítjük meg: melyik filmet
+                        hol vetítik, milyen műfajban, milyen hosszban, milyen származással.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>CRUD műveletek</h3>
+                    <p>
+                        Az admin felületen keresztül teljes <strong>CRUD</strong> funkcionalitás
+                        érhető el az egyik kiválasztott táblához (pl. a <strong>film</strong> táblához):
+                        új film hozzáadása, meglévő film módosítása, törlése, lista megjelenítése.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Felhasználói fiókok</h3>
+                    <p>
+                        Az oldalon lehetőség van <strong>regisztrációra</strong> és 
+                        <strong>bejelentkezésre</strong>. A felhasználók szerepkörökkel rendelkeznek:
+                        alapértelmezett <em>regisztrált felhasználó</em>, illetve <em>admin</em>.
+                        A vendégként érkező látogatók csak nyilvános tartalmakat látnak.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Kapcsolat és üzenetek</h3>
+                    <p>
+                        A <strong>Kapcsolat</strong> menüpontban üzenetet lehet küldeni az oldal
+                        üzemeltetőinek. Az üzenetek az adatbázisban tárolódnak, és a
+                        <strong>Üzenetek</strong> menüpontban jelennek meg a bejelentkezett
+                        felhasználók számára fordított időrendben.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- TECHNOLÓGIAI LEÍRÁS (DOKUMENTÁCIÓHOZ IS JÓ) -->
+        <section>
+            <h2>Felhasznált technológiák</h2>
+            <ul>
+                <li><strong>NodeJS + Express</strong> – szerveroldali keretrendszer</li>
+                <li><strong>EJS</strong> – sablonmotor a dinamikus HTML oldalakhoz</li>
+                <li><strong>MySQL</strong> – relációs adatbázis a moziműsor tárolásához</li>
+                <li><strong>HTML5UP – Hyperspace</strong> – reszponzív frontend sablon</li>
+                <li><strong>express-session</strong> – munkamenet-kezelés (bejelentkezés)</li>
+                <li><strong>bcryptjs</strong> – jelszavak biztonságos tárolása</li>
+            </ul>
+        </section>
+
+        <!-- CALL TO ACTION -->
+        <section>
+            <h2>Hogyan tovább?</h2>
+            <p>
+                Ha még nem rendelkezel fiókkal, először regisztrálj, majd jelentkezz be, hogy
+                elérd az extra funkciókat (Üzenetek, Admin felület, CRUD).
+            </p>
+            <ul class="actions">
+                <% if (!user) { %>
+                    <li><a href="/register" class="button primary">Regisztráció</a></li>
+                    <li><a href="/login" class="button">Bejelentkezés</a></li>
+                <% } else { %>
+                    <li><a href="/adatbazis" class="button primary">Ugrás az adatbázis nézethez</a></li>
+                    <li><a href="/crud/film" class="button">Film CRUD</a></li>
+                <% } %>
+            </ul>
+        </section>
+    </div>
+</section>
+
+<%- include("partials/footer") %>
