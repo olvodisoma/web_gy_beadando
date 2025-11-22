@@ -3,14 +3,15 @@
 <section id="main" class="wrapper">
     <div class="inner">
         <header class="major">
-            <h2>Adatbázis – Filmek, mozik, vetítések</h2>
+            <h2>Adatbázis adatok</h2>
             <p>Az alábbiakban a moziműsor adatbázis három táblájának adatai láthatók.</p>
         </header>
 
-        <!-- Filmek -->
+        <!-- FILMEK -->
         <section>
             <h3>Filmek (film tábla)</h3>
-            <p>Az adatbázisban szereplő filmek listája (max. 50 találat):</p>
+            <p class="small">Az adatbázisban szereplő filmek listája (max. 50 találat).</p>
+
             <div class="table-wrapper">
                 <table>
                     <thead>
@@ -35,10 +36,11 @@
             </div>
         </section>
 
-        <!-- Mozik -->
+        <!-- MOZIK -->
         <section>
             <h3>Mozik (mozi tábla)</h3>
-            <p>Az adatbázisban szereplő mozik listája:</p>
+            <p class="small">Budapest mozijainak listája.</p>
+
             <div class="table-wrapper">
                 <table>
                     <thead>
@@ -63,16 +65,17 @@
             </div>
         </section>
 
-        <!-- Vetítések (JOIN) -->
+        <!-- VETÍTÉSEK -->
         <section>
-            <h3>Vetítések (film + mozi + hely JOIN)</h3>
-            <p>Melyik filmet melyik moziban vetítik (max. 100 találat):</p>
+            <h3>Vetítések (JOIN – film + mozi + hely)</h3>
+            <p class="small">Melyik filmet melyik moziban vetítik (max. 100 találat).</p>
+
             <div class="table-wrapper">
                 <table>
                     <thead>
                         <tr>
-                            <th>Film címe</th>
-                            <th>Mozi neve</th>
+                            <th>Film</th>
+                            <th>Mozi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -86,6 +89,7 @@
                 </table>
             </div>
         </section>
+
     </div>
 </section>
 

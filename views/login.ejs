@@ -1,18 +1,41 @@
 <%- include("partials/header") %>
 
-<section id="main">
+<section id="main" class="wrapper">
     <div class="inner">
-        <h2>Bejelentkezés</h2>
 
-        <form method="POST" action="/login">
-            <label>Email:</label>
-            <input type="email" name="email" required>
+        <header class="major">
+            <h2>Bejelentkezés</h2>
+            <p>Lépj be a fiókodba.</p>
+        </header>
 
-            <label>Jelszó:</label>
-            <input type="password" name="password" required>
+        <% if (error) { %>
+            <div class="alert-error"><%= error %></div>
+        <% } %>
 
-            <button type="submit">Bejelentkezés</button>
-        </form>
+        <div class="contact-card">
+            <form method="POST" action="/login">
+                <div class="fields">
+
+                    <div class="field">
+                        <label for="email">E-mail cím</label>
+                        <input type="email" id="email" name="email"
+                               placeholder="Add meg az e-mail címed" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="password">Jelszó</label>
+                        <input type="password" id="password" name="password"
+                               placeholder="Add meg a jelszavad" required>
+                    </div>
+
+                </div>
+
+                <ul class="actions">
+                    <li><button type="submit" class="button primary">Bejelentkezés</button></li>
+                </ul>
+            </form>
+        </div>
+
     </div>
 </section>
 

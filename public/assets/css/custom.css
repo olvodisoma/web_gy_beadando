@@ -1,0 +1,170 @@
+/* Általános finomhangolások */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Főoldal hero kicsit modernebb */
+.hero-intro {
+    background: linear-gradient(135deg, #ff6b6b, #f8e473);
+    border-radius: 1.5rem;
+    padding: 2.5rem;
+    color: #222;
+    box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+    margin-bottom: 2rem;
+}
+
+.hero-intro h1 {
+    margin-bottom: 0.5rem;
+}
+
+.hero-intro p {
+    font-size: 1.05rem;
+    opacity: 0.95;
+}
+
+/* Szép gombok */
+.button.primary {
+    border-radius: 999px;
+    padding: 0.7rem 1.8rem;
+    font-weight: 600;
+}
+
+/* Táblázatok modernebbé tétele */
+.table-wrapper table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-wrapper table thead {
+    background: #222;
+    color: #fff;
+}
+
+.table-wrapper table tbody tr:nth-child(odd) {
+    background: rgba(255,255,255,0.03);
+}
+
+.table-wrapper table tbody tr:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+/* Kapcsolat űrlap – kicsit kártyaszerű */
+.contact-card {
+    background: rgba(255,255,255,0.02);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* Üzenet siker/hiba box */
+.alert-success {
+    border-left: 4px solid #2ecc71;
+    background: rgba(46, 204, 113, 0.08);
+    padding: 1rem 1.2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.alert-error {
+    border-left: 4px solid #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+    padding: 1rem 1.2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* ============================
+   MODERN BUTTON DESIGN
+   ============================ */
+
+.button,
+button,
+input[type="submit"],
+input[type="button"] {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+
+    padding: 0.7rem 1.9rem;
+    border-radius: 999px !important;  /* teljesen lekerekített */
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+
+    transition: all 0.2s ease;
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.25); /* alap árnyék */
+}
+
+/* Primary button – Hyperspace színekkel kombinálva */
+.button.primary,
+button.primary,
+input[type="submit"].primary {
+    background: linear-gradient(135deg, #ff6b6b, #ff8f6b);
+    border: none;
+    color: white !important;
+}
+
+/* Hover-effekt */
+.button:hover,
+button:hover,
+input[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+/* Visual click (active state) */
+.button:active,
+button:active,
+input[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0px 4px 14px rgba(0,0,0,0.2);
+}
+
+/* ============================
+   MODERN INPUT + TEXTAREA DESIGN
+   ============================ */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.9rem 1.1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.25s ease;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Hover */
+input:hover,
+textarea:hover,
+select:hover {
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Focus effekt – színes glow */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #ff6b6b;
+    box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.35);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+/* Placeholder finomabb */
+::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.95rem;
+}
+
+
