@@ -1,0 +1,52 @@
+<%- include("../partials/header") %>
+
+<section id="main" class="wrapper">
+    <div class="inner">
+        <header class="major">
+            <h2>Új felhasználó létrehozása</h2>
+        </header>
+
+        <% if (error) { %>
+            <div class="alert-error"><%= error %></div>
+        <% } %>
+
+        <div class="contact-card">
+            <form method="POST" action="/crud/users/new">
+                <div class="fields">
+
+                    <div class="field">
+                        <label for="email">E-mail cím</label>
+                        <input type="email" id="email" name="email" required placeholder="pl. valaki@example.com">
+                    </div>
+
+                    <div class="field half">
+                        <label for="password">Jelszó</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+
+                    <div class="field half">
+                        <label for="confirm">Jelszó ismét</label>
+                        <input type="password" id="confirm" name="confirm" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="role">Szerepkör</label>
+                        <select id="role" name="role" required>
+                            <option value="user">user</option>
+                            <option value="admin">admin</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <ul class="actions">
+                    <li><button type="submit" class="button primary">Mentés</button></li>
+                    <li><a href="/crud/users" class="button">Mégse</a></li>
+                </ul>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<%- include("../partials/footer") %>

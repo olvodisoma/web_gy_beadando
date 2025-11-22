@@ -6,6 +6,7 @@ const authRoutes = require("./routes/auth");
 const adatbazisRoutes = require("./routes/adatbazis");
 const kapcsolatRoutes = require("./routes/kapcsolat");
 const uzenetekRoutes = require("./routes/uzenetek");
+const crudUsersRoutes = require("./routes/crud_users");
 
 const app = express();
 
@@ -40,6 +41,7 @@ app.use("/", authRoutes);
 app.use("/", adatbazisRoutes);
 app.use("/", kapcsolatRoutes);
 app.use("/", uzenetekRoutes);
+app.use("/", crudUsersRoutes);
 // Főoldal
 app.get("/", (req, res) => {
   res.render("index"); // user és currentPath már benne van a res.locals-ban

@@ -1,0 +1,46 @@
+<%- include("../partials/header") %>
+
+<section id="main" class="wrapper">
+    <div class="inner">
+        <header class="major">
+            <h2>Felhasználók kezelése</h2>
+            <p>Adminisztráció – felhasználók listázása, szerkesztése, törlése.</p>
+        </header>
+
+        <ul class="actions">
+            <li><a href="/crud/users/new" class="button primary">Új felhasználó</a></li>
+        </ul>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>E-mail</th>
+                        <th>Szerepkör</th>
+                        <th>Műveletek</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach(u => { %>
+                        <tr>
+                            <td><%= u.id %></td>
+                            <td><%= u.email %></td>
+                            <td><%= u.role %></td>
+                            <td>
+                                <a href="/crud/users/edit/<%= u.id %>" class="button">Szerkesztés</a>
+                                <a href="/crud/users/delete/<%= u.id %>" class="button"
+                                   onclick="return confirm('Biztosan törölni szeretnéd ezt a felhasználót?');">
+                                    Törlés
+                                </a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</section>
+
+<%- include("../partials/footer") %>

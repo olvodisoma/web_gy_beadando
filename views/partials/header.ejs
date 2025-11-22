@@ -37,11 +37,13 @@
                     </a>
                 </li>
 
-                <li>
-                    <a href="/crud/film" class="<%= currentPath.startsWith('/crud') ? 'active' : '' %>">
-                        CRUD
-                    </a>
-                </li>
+                <% if (user && user.role === "admin") { %>
+                    <li>
+                        <a href="/crud/users" class="<%= currentPath.startsWith('/crud/users') ? 'active' : '' %>">
+                            CRUD – Felhasználók
+                        </a>
+                    </li>
+                <% } %>
 
                 <li>
                     <a href="/kapcsolat" class="<%= currentPath === '/kapcsolat' ? 'active' : '' %>">
