@@ -4,6 +4,7 @@ const session = require("express-session");
 
 const authRoutes = require("./routes/auth");
 const adatbazisRoutes = require("./routes/adatbazis");
+const kapcsolatRoutes = require("./routes/kapcsolat");
 
 const app = express();
 
@@ -36,6 +37,7 @@ app.set("views", path.join(__dirname, "views"));
 // ROUTES
 app.use("/", authRoutes);
 app.use("/", adatbazisRoutes);
+app.use("/", kapcsolatRoutes);
 
 // Főoldal
 app.get("/", (req, res) => {

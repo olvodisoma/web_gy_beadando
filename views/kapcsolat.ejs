@@ -1,0 +1,48 @@
+<%- include("partials/header") %>
+
+<section id="main" class="wrapper">
+    <div class="inner">
+        <header class="major">
+            <h2>Kapcsolat</h2>
+            <p>Írj nekünk üzenetet, és elmentjük az adatbázisba.</p>
+        </header>
+
+        <% if (success) { %>
+            <div class="box" style="border-left: 4px solid #2ecc71;">
+                <p><strong>Az üzeneted sikeresen elküldve!</strong></p>
+            </div>
+        <% } %>
+
+        <% if (error) { %>
+            <div class="box" style="border-left: 4px solid #e74c3c;">
+                <p><strong><%= error %></strong></p>
+            </div>
+        <% } %>
+
+        <form method="POST" action="/kapcsolat">
+            <div class="fields">
+                <div class="field half">
+                    <label for="nev">Név</label>
+                    <input type="text" name="nev" id="nev" required />
+                </div>
+                <div class="field half">
+                    <label for="email">E-mail cím</label>
+                    <input type="email" name="email" id="email" required />
+                </div>
+                <div class="field">
+                    <label for="targy">Tárgy</label>
+                    <input type="text" name="targy" id="targy" />
+                </div>
+                <div class="field">
+                    <label for="uzenet">Üzenet</label>
+                    <textarea name="uzenet" id="uzenet" rows="6" required></textarea>
+                </div>
+            </div>
+            <ul class="actions">
+                <li><button type="submit" class="button primary">Üzenet küldése</button></li>
+            </ul>
+        </form>
+    </div>
+</section>
+
+<%- include("partials/footer") %>
