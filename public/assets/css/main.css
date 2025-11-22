@@ -3907,3 +3907,98 @@ input, select, textarea {
 			}
 
 		}
+/* --- HERO POSTER SECTION --- */
+
+.poster-hero {
+    position: relative;
+    padding: 6rem 0 4rem 0;
+    text-align: center;
+    background: #1f1537;
+    color: #fff;
+    overflow: hidden;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+/* --- POSTER CONTAINER --- */
+.poster-container {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 2rem;
+}
+
+/* --- POSTERS --- */
+.poster {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    animation: float 4s ease-in-out infinite;
+    transition: transform 0.3s;
+}
+
+.poster:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+/* külön lebegési fázis mindháromnál */
+.poster-left {
+    animation-delay: 0s;
+}
+
+.poster-center {
+    animation-delay: 0.5s;
+    transform: scale(1.1);
+}
+
+.poster-right {
+    animation-delay: 1s;
+}
+
+/* lebegő animáció */
+@keyframes float {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .poster-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .poster {
+        width: 160px;
+        height: 240px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+}
+.actions {
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+.actions li {
+    list-style: none;
+}

@@ -1,24 +1,36 @@
 <%- include("partials/header") %>
 
+<section class="poster-hero">
+    <div class="hero-content">
+        <h1>Budapest filmjei, egy helyen.</h1>
+        <p>Fedezd fel a legnépszerűbb mozik és filmek világát.</p>
+    </div>
+
+    <!-- 3 lebegő film plakát -->
+    <div class="poster-container">
+        <img src="/images/poster1.jpeg" class="poster poster-left" alt="Film plakát 1">
+        <img src="/images/poster2.webp" class="poster poster-center" alt="Film plakát 2">
+        <img src="/images/poster3.webp" class="poster poster-right" alt="Film plakát 3">
+        <img src="/images/poster4.webp" class="poster poster-right" alt="Film plakát 4">
+        <img src="/images/poster5.webp" class="poster poster-right" alt="Film plakát 5">
+    </div>
+
+    <div>
+         <ul class="actions">
+            <% if (!user) { %>
+                <li><a href="/register" class="button primary big">Csatlakozom</a></li>
+                <li><a href="/adatbazis" class="button big">Filmek böngészése</a></li>
+            <% } else { %>
+                <li><a href="/adatbazis" class="button primary big">Adatbázis</a></li>
+                <li><a href="/crud/users" class="button big">Felhasználók kezelése</a></li>
+            <% } %>
+        </ul>
+    </div>
+</section>
+
+<!-- ALATTA JÖHET A RÉGI TARTALOM (tiles, bemutatkozás stb.) -->
 <section id="main" class="wrapper">
     <div class="inner">
-
-        <!-- Modern hero box -->
-        <div class="hero-intro">
-            <h1>Hyperspace Cinema Network</h1>
-            <p>Budapest mozijainak és filmjeinek modern, NodeJS alapú portálja.</p>
-
-            <ul class="actions">
-                <% if (!user) { %>
-                    <li><a href="/register" class="button primary">Csatlakozom</a></li>
-                    <li><a href="/adatbazis" class="button">Filmek böngészése</a></li>
-                <% } else { %>
-                    <li><a href="/adatbazis" class="button primary">Adatbázis</a></li>
-                    <li><a href="/crud/film" class="button">Film CRUD</a></li>
-                <% } %>
-            </ul>
-        </div>
-
         <section>
             <h2>Kik vagyunk?</h2>
             <p>
@@ -35,11 +47,10 @@
                 <li>Adatbázis lekérdezések: filmek, mozik, vetítések</li>
                 <li>Kapcsolat űrlap → üzenetek mentése adatbázisba</li>
                 <li>Üzenetek megtekintése bejelentkezett felhasználóknak</li>
-                <li>CRUD műveletek (film tábla)</li>
+                <li>CRUD műveletek (felhasználók tábla)</li>
                 <li>Admin jogosultság kezelés</li>
             </ul>
         </section>
-
     </div>
 </section>
 
