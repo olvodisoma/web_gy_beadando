@@ -4294,3 +4294,53 @@ input, select, textarea {
         max-width: 70%;
     }
 }
+/* ===== MOBIL FINOMHANGOLÁS – PLAKÁTOK + HÁTTÉR ===== */
+@media (max-width: 768px) {
+
+    /* 1) Globális háttér animáció eltüntetése mobilon */
+    .global-background,
+    .bg-blob {
+        display: none !important;
+    }
+
+    /* 2) Hero szekció háttér fix, hogy animáció nélkül is jól nézzen ki */
+    .poster-hero {
+        padding: 4rem 0 3rem 0;
+        background: rgba(31, 21, 55, 0.85) !important;
+        backdrop-filter: none;
+    }
+
+    /* 3) Plakát konténer mobil nézetben */
+    .poster-container {
+        flex-direction: row; 
+        justify-content: center;
+        align-items: flex-end;
+        gap: 1rem;
+        padding-inline: 1rem;
+        overflow: hidden;   /* ne lógjanak ki oldalra */
+    }
+
+    /* 4) Plakátok mobil méretezése és lebegés finomítása */
+    .poster {
+        width: 35vw;           /* 2–3 plakát elfér egymás mellett */
+        max-width: 140px;
+        aspect-ratio: 2 / 3;
+        height: auto;
+        animation-duration: 7s;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.45);
+    }
+
+    /* 5) Összesen 5 plakát van → mobilon az első 3 látszódjon */
+    .poster:nth-child(n+4) {
+        display: none;
+    }
+
+    /* 6) Hero szöveg kisebb mobilon */
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
