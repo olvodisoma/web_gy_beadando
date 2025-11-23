@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const db = require("../config/db");
 const bcrypt = require("bcryptjs");
-const { isAdmin } = require("../middleware/auth"); // ha máshol van, az utat módosítsd
+const { isAdmin } = require("../middleware/auth");
 
 // LISTA – összes felhasználó
 router.get("/crud/users", isAdmin, (req, res) => {
@@ -71,7 +71,8 @@ router.post("/crud/users/new", isAdmin, (req, res) => {
                     });
                 }
 
-                res.redirect("/crud/users");
+                // FIX: prefix hozzáadása
+                res.redirect("/app030/crud/users");
             }
         );
     });
@@ -106,7 +107,6 @@ router.post("/crud/users/edit/:id", isAdmin, (req, res) => {
         });
     }
 
-    // Ha van új jelszó -> frissítjük azt is, ha nincs -> csak email+role
     const updateUser = (withPassword) => {
         if (withPassword) {
             const hashed = bcrypt.hashSync(password, 10);
@@ -121,7 +121,7 @@ router.post("/crud/users/edit/:id", isAdmin, (req, res) => {
                             error: "Hiba történt a frissítés során."
                         });
                     }
-                    res.redirect("/crud/users");
+                    res.redirect("/app030/crud/users");  // FIX
                 }
             );
         } else {
@@ -136,12 +136,13 @@ router.post("/crud/users/edit/:id", isAdmin, (req, res) => {
                             error: "Hiba történt a frissítés során."
                         });
                     }
-                    res.redirect("/crud/users");
+                    res.redirect("/app030/crud/users");  // FIX
                 }
             );
         }
     };
 
+    // Ha van új jelszó:
     if (password && password.trim() !== "") {
         updateUser(true);
     } else {
@@ -158,7 +159,9 @@ router.get("/crud/users/delete/:id", isAdmin, (req, res) => {
             console.log(err);
             return res.send("Hiba történt a törlés során.");
         }
-        res.redirect("/crud/users");
+
+        // FIX
+        res.redirect("/app030/crud/users");
     });
 });
 

@@ -8,21 +8,21 @@
 
     <!-- 3 lebegő film plakát -->
     <div class="poster-container">
-        <img src="/images/poster1.jpeg" class="poster poster-left" alt="Film plakát 1">
-        <img src="/images/poster2.webp" class="poster poster-center" alt="Film plakát 2">
-        <img src="/images/poster3.webp" class="poster poster-right" alt="Film plakát 3">
-        <img src="/images/poster4.webp" class="poster poster-right" alt="Film plakát 4">
-        <img src="/images/poster5.webp" class="poster poster-right" alt="Film plakát 5">
+        <img src="/app030/images/poster1.jpeg" class="poster poster-left" alt="Film plakát 1">
+        <img src="/app030/images/poster2.webp" class="poster poster-center" alt="Film plakát 2">
+        <img src="/app030/images/poster3.webp" class="poster poster-right" alt="Film plakát 3">
+        <img src="/app030/images/poster4.webp" class="poster poster-right" alt="Film plakát 4">
+        <img src="/app030/images/poster5.webp" class="poster poster-right" alt="Film plakát 5">
     </div>
 
     <div>
          <ul class="actions">
             <% if (!user) { %>
-                <li><a href="/register" class="button primary big">Csatlakozom</a></li>
-                <li><a href="/adatbazis" class="button big">Filmek böngészése</a></li>
+                <li><a href="/app030/register" class="button primary big">Csatlakozom</a></li>
+                <li><a href="/app030/adatbazis" class="button big">Filmek böngészése</a></li>
             <% } else { %>
-                <li><a href="/adatbazis" class="button primary big">Adatbázis</a></li>
-                <li><a href="/crud/users" class="button big">Felhasználók kezelése</a></li>
+                <li><a href="/app030/adatbazis" class="button primary big">Adatbázis</a></li>
+                <li><a href="/app030/crud/users" class="button big">Felhasználók kezelése</a></li>
             <% } %>
         </ul>
     </div>
@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="feature-card">
-                    <h4🎬> Adatbázis nézet</h4>
+                    <h4>🎬 Adatbázis nézet</h4>
                     <p>Filmek, mozik és vetítések megjelenítése több összekapcsolt táblából.</p>
                 </div>
 

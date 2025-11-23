@@ -29,7 +29,6 @@ router.get("/register", (req, res) => {
 router.post("/register", (req, res) => {
     const { email, password, confirm } = req.body;
 
-    // VALIDÁLÁS
     if (!email || !password || !confirm) {
         return res.render("register", {
             error: "Minden mező kitöltése kötelező!",
@@ -44,10 +43,8 @@ router.post("/register", (req, res) => {
         });
     }
 
-    // PASSWORD HASH
     const hashed = bcrypt.hashSync(password, 10);
 
-    // EMAIL LÉTEZIK?
     db.query("SELECT * FROM users WHERE email = ?", [email], (err, rows) => {
         if (rows.length > 0) {
             return res.render("register", {
@@ -56,7 +53,6 @@ router.post("/register", (req, res) => {
             });
         }
 
-        // MENTÉS DB-BE
         db.query(
             "INSERT INTO users (email, password, role) VALUES (?, ?, 'user')",
             [email, hashed],
@@ -69,13 +65,12 @@ router.post("/register", (req, res) => {
                     });
                 }
 
-                // Siker → átirányítás
-                res.redirect("/login");
+                // LINUX FIX → prefix hozzáadása
+                res.redirect("/app030/login");
             }
         );
     });
 });
-
 
 /* ============================
    LOGIN SUBMIT
@@ -83,7 +78,6 @@ router.post("/register", (req, res) => {
 router.post("/login", (req, res) => {
     const { email, password } = req.body;
 
-    // VALIDÁLÁS
     if (!email || !password) {
         return res.render("login", {
             error: "Minden mező kötelező!",
@@ -91,7 +85,6 @@ router.post("/login", (req, res) => {
         });
     }
 
-    // KERESSÜK A USER-T
     db.query("SELECT * FROM users WHERE email = ?", [email], (err, rows) => {
         if (err || rows.length === 0) {
             return res.render("login", {
@@ -102,7 +95,6 @@ router.post("/login", (req, res) => {
 
         const user = rows[0];
 
-        // JELSZÓ ELLENŐRZÉS
         if (!bcrypt.compareSync(password, user.password)) {
             return res.render("login", {
                 error: "Hibás email vagy jelszó!",
@@ -110,24 +102,24 @@ router.post("/login", (req, res) => {
             });
         }
 
-        // MINDEN OK → SESSION-BE TESSZÜK
         req.session.user = {
             id: user.id,
             email: user.email,
             role: user.role
         };
 
-        res.redirect("/");
+        // LINUX FIX → főoldal prefixelve
+        res.redirect("/app030/");
     });
 });
-
 
 /* ============================
    LOGOUT
    ============================ */
 router.get("/logout", (req, res) => {
     req.session.destroy(() => {
-        res.redirect("/");
+        // LINUX FIX → prefixelés
+        res.redirect("/app030/");
     });
 });
 

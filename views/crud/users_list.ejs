@@ -8,7 +8,7 @@
         </header>
 
         <ul class="actions">
-            <li><a href="/crud/users/new" class="button primary">Új felhasználó</a></li>
+            <li><a href="/app030/crud/users/new" class="button primary">Új felhasználó</a></li>
         </ul>
 
         <div class="table-wrapper">
@@ -28,8 +28,8 @@
                             <td><%= u.email %></td>
                             <td><%= u.role %></td>
                             <td>
-                                <a href="/crud/users/edit/<%= u.id %>" class="button">Szerkesztés</a>
-                                <a href="/crud/users/delete/<%= u.id %>" class="button"
+                                <a href="/app030/crud/users/edit/<%= u.id %>" class="button">Szerkesztés</a>
+                                <a href="/app030/crud/users/delete/<%= u.id %>" class="button"
                                    onclick="return confirm('Biztosan törölni szeretnéd ezt a felhasználót?');">
                                     Törlés
                                 </a>

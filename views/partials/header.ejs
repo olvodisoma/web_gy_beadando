@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
     <!-- Hyperspace CSS -->
-    <link rel="stylesheet" href="/assets/css/main.css" />
-    <link rel="stylesheet" href="/assets/css/custom.css" />
-    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="/app030/assets/css/main.css" />
+    <link rel="stylesheet" href="/app030/assets/css/custom.css" />
+    <noscript><link rel="stylesheet" href="/app030/assets/css/noscript.css" /></noscript>
 </head>
 
 <body class="is-preload">
@@ -17,75 +17,87 @@
     <section id="header">
         <header>
             <span class="image avatar">
-                <img src="/images/avatar_resized.png" alt="Profilkép" />
+                <img src="/app030/images/avatar_resized.png" alt="Profilkép" />
             </span>
-            <h1 id="logo"><a href="/">Hyperspace Cinema Network</a></h1>
+            <h1 id="logo"><a href="/app030/">Hyperspace Cinema Network</a></h1>
             <p>Budapesti mozik és filmek NodeJS alapú portálja</p>
         </header>
 
         <nav id="nav">
             <ul>
+
+                <!-- FŐOLDAL -->
                 <li>
-                    <a href="/" class="<%= currentPath === '/' ? 'active' : '' %>">
+                    <a href="/app030/" class="<%= currentPath === '/' ? 'active' : '' %>">
                         Főoldal
                     </a>
                 </li>
 
+                <!-- ADATBÁZIS -->
                 <li>
-                    <a href="/adatbazis" class="<%= currentPath === '/adatbazis' ? 'active' : '' %>">
+                    <a href="/app030/adatbazis" class="<%= currentPath === '/adatbazis' ? 'active' : '' %>">
                         Adatbázis
                     </a>
                 </li>
 
+                <!-- CRUD: Csak admin -->
                 <% if (user && user.role === "admin") { %>
                     <li>
-                        <a href="/crud/users" class="<%= currentPath.startsWith('/crud/users') ? 'active' : '' %>">
+                        <a href="/app030/crud/users" class="<%= currentPath.startsWith('/crud/users') ? 'active' : '' %>">
                             CRUD – Felhasználók
                         </a>
                     </li>
                 <% } %>
 
+                <!-- KAPCSOLAT -->
                 <li>
-                    <a href="/kapcsolat" class="<%= currentPath === '/kapcsolat' ? 'active' : '' %>">
+                    <a href="/app030/kapcsolat" class="<%= currentPath === '/kapcsolat' ? 'active' : '' %>">
                         Kapcsolat
                     </a>
                 </li>
 
-             
-                    <% if (user) { %>
-                        <li>
-                            <a href="/uzenetek" class="<%= currentPath === '/uzenetek' ? 'active' : '' %>">
-                                Üzenetek
-                            </a>
-                        </li>
-                    <% } %>
-             
+                <!-- ÜZENETEK: Csak bejelentkezve -->
+                <% if (user) { %>
+                    <li>
+                        <a href="/app030/uzenetek" class="<%= currentPath === '/uzenetek' ? 'active' : '' %>">
+                            Üzenetek
+                        </a>
+                    </li>
+                <% } %>
 
+                <!-- BELÉPÉS / REGISZTRÁCIÓ -->
                 <% if (!user) { %>
                     <li>
-                        <a href="/login" class="<%= currentPath === '/login' ? 'active' : '' %>">
+                        <a href="/app030/login" class="<%= currentPath === '/login' ? 'active' : '' %>">
                             Bejelentkezés
                         </a>
                     </li>
+
                     <li>
-                        <a href="/register" class="<%= currentPath === '/register' ? 'active' : '' %>">
+                        <a href="/app030/register" class="<%= currentPath === '/register' ? 'active' : '' %>">
                             Regisztráció
                         </a>
                     </li>
+
                 <% } else { %>
+
+                    <!-- ADMIN MENU -->
                     <% if (user.role === "admin") { %>
                         <li>
-                            <a href="/admin" class="<%= currentPath.startsWith('/admin') ? 'active' : '' %>">
+                            <a href="/app030/admin" class="<%= currentPath.startsWith('/admin') ? 'active' : '' %>">
                                 Admin
                             </a>
                         </li>
                     <% } %>
+
                     <li>
-                        <a href="/logout">
+                        <a href="/app030/logout">
                             Kijelentkezés
                         </a>
                     </li>
+
                 <% } %>
+
             </ul>
         </nav>
 
@@ -102,9 +114,10 @@
 
     <!-- Wrapper -->
     <div id="wrapper">
-        <!-- Teljes oldalas háttér animáció -->
-<div class="global-background">
-    <div class="bg-blob blob1"></div>
-    <div class="bg-blob blob2"></div>
-    <div class="bg-blob blob3"></div>
-</div>
+
+        <!-- Háttér animáció -->
+        <div class="global-background">
+            <div class="bg-blob blob1"></div>
+            <div class="bg-blob blob2"></div>
+            <div class="bg-blob blob3"></div>
+        </div>

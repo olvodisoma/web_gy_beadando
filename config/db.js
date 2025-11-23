@@ -2,14 +2,12 @@ const mysql = require("mysql2");
 
 const db = mysql.createConnection({
     host: "localhost",
-    user: "root",
-    password: "",
-    database: "mozi"
+    user: "studb030",
+    password: "abc123",     // a tanár ezt adta mindenkinél
+    database: "db030",
+    port: 3306
 });
 
-db.connect((err) => {
-    if (err) throw err;
-    console.log("MySQL connected!");
-});
+db.connect();
 
 module.exports = db;

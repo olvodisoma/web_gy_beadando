@@ -36,7 +36,7 @@ router.post("/kapcsolat", (req, res) => {
         }
 
         // Siker esetén redirect, hogy F5-re ne küldje újra az űrlapot
-        res.redirect("/kapcsolat?success=1");
+        res.redirect("/app030/kapcsolat?success=1");
     });
 });
 
