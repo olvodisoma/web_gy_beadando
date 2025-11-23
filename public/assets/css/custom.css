@@ -167,4 +167,42 @@ select:focus {
     font-size: 0.95rem;
 }
 
+/* Modern admin ikon */
+.admin-icon {
+    font-size: 2.8rem;
+    margin-bottom: 0.8rem;
+    opacity: 0.9;
+}
+
+/* Még modernebb admin cardok */
+.admin-card {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    padding: 2rem 1.7rem;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    transition: all 0.25s ease;
+}
+
+.admin-card h3 {
+    margin-top: 0.5rem;
+    font-size: 1.35rem;
+    font-weight: 600;
+}
+
+.admin-card p {
+    opacity: 0.75;
+    margin-top: 0.3rem;
+}
+
+/* Hover effekt */
+.admin-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.40);
+    border-color: rgba(255,255,255,0.28);
+}
+
 
